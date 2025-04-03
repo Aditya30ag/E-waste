@@ -7,7 +7,10 @@ const Navigation = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+  const handleLogout = () => {
+    localStorage.removeItem('userToken'); // Clear the token from local storage
+    window.location.href = '/'; // Redirect to the home page
+  }
   return (
     <nav className="w-full md:w-auto">
       {/* Mobile menu button */}
@@ -35,12 +38,12 @@ const Navigation = () => {
           <Link to="/resources" className="px-3 py-2 rounded hover:bg-green-800 transition duration-200">Resources</Link>
           <Link to="/blog" className="px-3 py-2 rounded hover:bg-green-800 transition duration-200">Blog</Link>
           <Link to="/contact" className="px-3 py-2 rounded hover:bg-green-800 transition duration-200">Contact</Link>
-          <Link to="/account" className="mt-2 flex items-center justify-center bg-white text-green-700 px-4 py-2 rounded-md font-medium">
+          <button onClick={handleLogout} className="mt-2 flex items-center justify-center bg-white text-green-700 px-4 py-2 rounded-md font-medium">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-            Sign In
-          </Link>
+            Logout
+          </button>
         </div>
       </div>
       
@@ -49,12 +52,12 @@ const Navigation = () => {
         <Link to="/dashboard" className="hover:text-green-200 transition duration-200">Home</Link>
         <Link to="/services" className="hover:text-green-200 transition duration-200">Services</Link>
         <Link to="/overview" className="hover:text-green-200 transition duration-200">Overview</Link>
-        <Link to="/account" className="flex items-center bg-white text-green-700 px-4 py-2 rounded-md font-medium hover:bg-green-100 transition duration-200">
+        <button onClick={handleLogout} to="/" className="flex items-center bg-white text-green-700 px-4 py-2 rounded-md font-medium hover:bg-green-100 transition duration-200">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
-          Sign In
-        </Link>
+          Logout
+        </button>
       </div>
     </nav>
   );
