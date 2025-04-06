@@ -7,6 +7,7 @@ import DropoffMap from './DropoffMap';
 import RecyclingCalculator from './RecyclingCalculator';
 import TestimonialCarousel from './TestimonialCarousel';
 import BlogPreview from './BlogPreview';
+import { ComingSoonFeature } from './Upcomingfeature';
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
@@ -65,6 +66,7 @@ export default function HomePage() {
                   </button>
                 </div>
               </div>
+              
               <div className="md:w-1/2 bg-green-100 flex items-center justify-center p-8">
                 <div className="grid grid-cols-2 gap-4 w-full max-w-md">
                   <div className="bg-white p-4 rounded-lg shadow text-center">
@@ -88,7 +90,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
+        
         {/* NEW: How It Works Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-center mb-8">How Our Platform Works</h2>
@@ -221,7 +223,7 @@ export default function HomePage() {
 
         <Outlet />
       </main>
-
+      <ComingSoonFeature />
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
